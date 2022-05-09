@@ -1,0 +1,56 @@
+<body>
+
+
+
+    <div class="container col-md-12 mt-0">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="text-center">Sign In</h3>
+
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="registerForm"(ngSubmit)="register()" >
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Name" formControlName="uname" id="reg_name" required>
+
+                        </div>
+                        <div style="color: red" *ngIf="(this.registerForm.get('uname')?.touched ||this.registerForm.get('uname')?.dirty)&&this.registerForm.get('uname')?.errors">invalid username</div>
+
+
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" class="form-control" formControlName="userid" placeholder="account number" id="reg_accnum"
+                                required>
+
+                        </div>
+                        <div style="color: red" *ngIf="(this.registerForm.get('userid')?.touched ||this.registerForm.get('userid')?.dirty)&&this.registerForm.get('userid')?.errors">Invalid user id</div>
+
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            <input type="password" class="form-control" formControlName="pswd" placeholder="password" id="reg_password"
+                                required>
+
+                        </div>
+                        <div style="color: red" *ngIf="(this.registerForm.get('pswd')?.touched ||this.registerForm.get('pswd')?.dirty)&&this.registerForm.get('pswd')?.errors">Invalid password</div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Register" class="btn float-right register_btn "
+                                style="width:50%">
+                        </div>
+                    </form>
+                    <p style="color:white;align-items:baseline;">already a user? <a href="./index.html"
+                            style="color: chartreuse;"> Login</a></p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,24 @@
+<div class="container mt-5">
+    <h1 style="color: aliceblue;">EVENT LIST</h1>
+    <div>
+      <table class="table table-dark table-striped">
+  
+        <thead>
+          <tr>
+  
+            <th>DATE</th>
+            <th>EVENT</th>
+  
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let t of event">
+  
+            <td>{{t.date}}</td>
+            <td>{{t.description}}</td>
+  
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
